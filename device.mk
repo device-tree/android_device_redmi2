@@ -108,15 +108,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     charger_res_images
 
-# Connectivity Engine support
-PRODUCT_PACKAGES += \
-    libcnefeatureconfig
-
-ifeq ($(BOARD_USES_QCNE),true)
-PRODUCT_PROPERTY_OVERRIDES +=
-    persist.cne.feature=4
-endif
-
 # Display
 PRODUCT_PACKAGES += \
     copybit.msm8916 \
@@ -144,12 +135,6 @@ PRODUCT_COPY_FILES += \
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml
-
-# Properties
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.gps.qc_nlp_in_use=1 \
-    persist.loc.nlp_name=com.qualcomm.location \
-    ro.gps.agps_provider=1
 
 # IRSC
 PRODUCT_COPY_FILES += \
@@ -273,27 +258,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Recovery
 PRODUCT_PACKAGES += \
     librecovery_updater_cm
-
-# Connectivity Engine support (CNE)
-PRODUCT_PACKAGES += \
-    CNEService \
-    cneapiclient \
-    com.quicinc.cne \
-    init.cne.rc
-
-# DPM
-PRODUCT_PACKAGES += \
-    com.qti.dpmframework \
-    dpmapi
-
-# CNE and DPM symbol
-PRODUCT_PACKAGES += \
-    libshim_parcel
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.cne.feature=4 \
-    persist.data.target=dpm1 \
-    persist.data.qmi.adb_logmask=0
 
 # RIL
 PRODUCT_PACKAGES += \
