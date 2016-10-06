@@ -85,6 +85,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.voicerec=false \
     persist.audio.fluence.speaker=true
 
+<<<<<<< HEAD
+=======
+# Gello
+PRODUCT_PACKAGES += \
+    Gello
+
+>>>>>>> 3678a9398598f42c708537c56f74615bfabcffd1
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService \
@@ -246,6 +253,34 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     librecovery_updater_cm
 
+<<<<<<< HEAD
+=======
+# Connectivity Engine support (CNE)
+PRODUCT_PACKAGES += \
+    CNEService \
+    cneapiclient \
+    com.quicinc.cne \
+    init.cne.rc
+
+# DPM
+PRODUCT_PACKAGES += \
+    com.qti.dpmframework \
+    dpmapi
+
+# CNE and DPM symbol
+PRODUCT_PACKAGES += \
+    libshim_parcel
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.cne.feature=4 \
+    persist.data.target=dpm1 \
+    persist.data.qmi.adb_logmask=0
+
+# Telephony-ext
+PRODUCT_PACKAGES += telephony-ext ims-ext-common
+PRODUCT_BOOT_JARS += telephony-ext
+
+>>>>>>> 3678a9398598f42c708537c56f74615bfabcffd1
 # RIL
 PRODUCT_PACKAGES += \
     libcnefeatureconfig \
