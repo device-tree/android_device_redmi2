@@ -264,6 +264,10 @@ on boot
     chown system system /sys/devices/virtual/graphics/fb0/rgb
     chmod 0660 /sys/devices/virtual/graphics/fb0/rgb
 
+    chown root system /sys/android_touch/double2wake
+    chmod 0664 /sys/android_touch/double2wake
+    restorecon /sys/android_touch/double2wake
+
     # Create directory used by display clients
     mkdir /data/misc/display 0770 system graphics
     mkdir /persist/display 0770 system graphics
@@ -331,7 +335,7 @@ service qmuxd /system/bin/qmuxd
 
 service netmgrd /system/bin/netmgrd
     class main
-    group wakelock
+    group system wakelock
 
 on property:ro.use_data_netmgrd=false
     # netmgr not supported on specific target

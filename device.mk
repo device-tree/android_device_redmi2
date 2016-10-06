@@ -85,10 +85,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.voicerec=false \
     persist.audio.fluence.speaker=true
 
-# Gello
-PRODUCT_PACKAGES += \
-    Gello
-
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService \
@@ -96,8 +92,8 @@ PRODUCT_PACKAGES += \
     libantradio
 
 # Charger
-PRODUCT_PACKAGES += \
-    charger_res_images
+#PRODUCT_PACKAGES += \
+#    charger_res_images
 
 # Display
 PRODUCT_PACKAGES += \
@@ -252,6 +248,7 @@ PRODUCT_PACKAGES += \
 
 # RIL
 PRODUCT_PACKAGES += \
+    libcnefeatureconfig \
     librmnetctl \
     libxml2
 
